@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5873a2c382f62c84aa5be2b8e91dd7f7, type: 3}
+  m_Name: A2. Ask where
+  m_EditorClassIdentifier: 
+  storyText: "Voc\xEA n\xE3o se lembra de como chegou aqui. Voc\xEA quer perguntar
+    onde est\xE1, mas percebe, que voc\xEA tamb\xE9m n\xE3o sabe o nome da pessoa
+    a sua frente.\n\n1. Pegar o tablet"
+  nextStates:
+  - {fileID: 11400000, guid: f93919c605694274199141c91297db42, type: 2}
+  hasRandomState: 0
+  notProcessed: 0

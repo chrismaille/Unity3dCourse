@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5873a2c382f62c84aa5be2b8e91dd7f7, type: 3}
+  m_Name: StartingState
+  m_EditorClassIdentifier: 
+  storyText: "A risada na mesa do lado desperta sua aten\xE7\xE3o. Voc\xEA est\xE1
+    na mesa ao lado, perto da cal\xE7ada e o caf\xE9 est\xE1 vazio nesse momento,
+    exceto pela sua mesa e a do lado, onde dois homens falam alto e riem.\r\n\r\nVoc\xEA
+    n\xE3o est\xE1 sozinho, a sua frente, uma amiga de longa data est\xE1 te entregando
+    um pequeno tablet. Ela parece entusiasmada - \"voc\xEA consegue ler?\", ela pergunta
+    ansiosa.\r\n\r\n1. Pegar o tablet.\r\n2. Perguntar onde voc\xEAs est\xE3o."
+  nextStates:
+  - {fileID: 11400000, guid: f93919c605694274199141c91297db42, type: 2}
+  - {fileID: 11400000, guid: 21dedc1dfd728ee4ba9e1d92e473a89d, type: 2}
+  hasRandomState: 1
+  processed: 1
