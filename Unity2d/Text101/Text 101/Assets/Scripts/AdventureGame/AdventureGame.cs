@@ -9,9 +9,20 @@ public class AdventureGame : MonoBehaviour
     [SerializeField] public Text textComponent;
     [SerializeField] private State startingState;
     public State fluffy;
-    
+
 
     private State state;
+
+    private string[] descriptions =
+    {
+        "O céu está nublado.",
+        "O chão está molhado",
+        "Só tem homens no café.",
+        "Uma música toca dentro do café.",
+        "Alexa, que horas são?",
+        "O Leão dorme a noite.",
+        "Hello World!"
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -30,19 +41,25 @@ public class AdventureGame : MonoBehaviour
         {
             Debug.Log("Adding Random State...");
             AddRandomState();
-            textComponent.text += "\n3. Foo?";
+            textComponent.text += $"\n3. {descriptions[Random.Range(0, descriptions.Length)]}";
         }
     }
 
     private void AddRandomState()
     {
         fluffy = ScriptableObject.CreateInstance<State>();
-        fluffy.name = "Fluffly State";
-        fluffy.storyText = "BAR\n\n1. Voltar.";
+        fluffy.name = "fluffly";
+        fluffy.storyText = GetRandomText();
         state.storyText = textComponent.text;
         fluffy.nextStates = new List<State> {state};
         state.nextStates.Add(fluffy);
         state.notProcessed = false;
+    }
+
+    private string GetRandomText()
+    {
+        string text = $"{descriptions[Random.Range(0, descriptions.Length)]}\n\n1. Voltar.";
+        return text;
     }
 
     // Update is called once per frame
@@ -54,17 +71,12 @@ public class AdventureGame : MonoBehaviour
     private void ManageState()
     {
         var nextStates = state.GetNextStates();
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        for (int index = 0; index < nextStates.Count; index++)
         {
-            ShowState(nextStates[0]);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ShowState(nextStates[1]);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ShowState(nextStates[2]);
+            if (Input.GetKeyDown(KeyCode.Alpha1 + index))
+            {
+                ShowState(nextStates[index]);
+            }
         }
     }
 }
